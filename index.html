@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flores y corazones</title>
+    <link rel="stylesheet" href="./style-question.css" />
+  </head>
+  <body>
+    <div id="pre-screen" class="container">
+      <div class="night"></div>
+      <div class="message">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <div class="btn_box">
+          <a href="message.html"> <button class="btn" id="yes">Sí</button></a>
+          <a><button class="btn" id="no">No</button></a>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      body {
+        background-color: #ffe6e9;
+        text-align: center;
+        font-family: "Arial", sans-serif;
+        overflow: hidden;
+      }
+
+      .text {
+        font-size: 45px;
+        font-weight: bold;
+        color: #d63384;
+        margin-top: 100px;
+      }
+
+      .btn_box {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        width: 140px;
+        height: 60px;
+        font-size: 22px;
+        font-weight: bold;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* YES button */
+      #yes {
+        background-color: #ff4d6d;
+        color: white;
+        width: 160px; /* Yeh button ka size thoda bada kar raha hai */
+        height: 70px;
+        border-radius: 30px;
+        border: 3px solid #d63384; /* Border bhi alag rakha */
+      }
+
+      #yes:hover {
+        background-color: #e63950;
+      }
+
+      /* NO button */
+      /* NO button */
+      #no {
+        background-color: #ffc3c9;
+        color: #d63384;
+        width: 160px; /* Yeh button ka size bhi thoda alag kar diya */
+        height: 70px;
+        border-radius: 30px;
+        border: 3px solid #d63384;
+        font-size: 22px;
+        position: relative; /* Added position property here */
+      }
+
+      #no:hover {
+        background-color: #ff99a1;
+        position: absolute; /* Ensures it moves on hover */
+      }
+
+      /* Extra styling for the buttons for clear distinction */
+      .btn {
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      #no:hover {
+        background-color: #ff99a1;
+      }
+
+      /* Floating hearts animation */
+      @keyframes hearts {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        100% {
+          transform: translateY(-100vh) scale(0.5);
+        }
+      }
+
+      .heart {
+        position: absolute;
+        bottom: 0;
+        font-size: 30px;
+        color: #ff4d6d;
+        animation: hearts 5s linear infinite;
+        opacity: 0.6;
+      }
+
+      /* Flirty message popup */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ff4d6d;
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        text-align: center;
+      }
+
+      /* Heart confetti */
+      .confetti {
+        position: absolute;
+        font-size: 25px;
+        animation: hearts 3s linear infinite;
+      }
+    </style>
+
+    <script>
+      // Moving "NO" button on hover
+      // Moving "NO" button on hover
+      document.getElementById("no").addEventListener("mouseover", function () {
+        var buttonWidth = this.offsetWidth;
+        var buttonHeight = this.offsetHeight;
+
+        // Make sure the button stays within the window's boundaries
+        var randomX = Math.random() * (window.innerWidth - buttonWidth);
+        var randomY = Math.random() * (window.innerHeight - buttonHeight);
+
+        // Update the position of the button
+        this.style.position = "absolute"; // Make it positionable
+        this.style.left = randomX + "px";
+        this.style.top = randomY + "px";
+      });
+
+      // Floating hearts animation
+      function createHeart() {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        document.body.appendChild(heart);
+
+        let randomX = Math.random() * window.innerWidth;
+        heart.style.left = randomX + "px";
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(createHeart, 500);
+      // Moving "NO" button on hover and touch for mobile
+      function moveButton() {
+        var buttonWidth = this.offsetWidth;
+        var buttonHeight = this.offsetHeight;
+
+        // Make sure the button stays within the window's boundaries
+        var randomX = Math.random() * (window.innerWidth - buttonWidth);
+        var randomY = Math.random() * (window.innerHeight - buttonHeight);
+
+        // Update the position of the button
+        this.style.position = "absolute"; // Make it positionable
+        this.style.left = randomX + "px";
+        this.style.top = randomY + "px";
+      }
+
+      // For desktop users (mouseover)
+      document.getElementById("no").addEventListener("mouseover", moveButton);
+
+      // For mobile users (touchstart)
+      document.getElementById("no").addEventListener("touchstart", moveButton);
+    </script>
+  </body>
+</html>
