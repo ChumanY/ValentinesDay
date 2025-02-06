@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="./style-question.css" />
   </head>
   <body>
+    <audio
+      id="background-music"
+      src="./KEANE - Somewhere Only We Know (Instrumental Original) - Jeryam.mp3"
+      loop
+    ></audio>
+
     <div id="pre-screen" class="container">
       <div class="night"></div>
       <div class="message">
@@ -195,5 +201,6 @@
       // For mobile users (touchstart)
       document.getElementById("no").addEventListener("touchstart", moveButton);
     </script>
+    <script src="./audio.js"></script>
   </body>
 </html>
