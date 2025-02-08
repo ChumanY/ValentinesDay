@@ -27,20 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(() =>
       typeWriter(
         paragraph1,
-        "Tu presencia es el regalo más especial que podrían ofrecerme en este día, y estoy inmensamente agradecido de poder compartirlo contigo. Que esta ocasión sea el inicio de muchos momentos hermosos juntos.",
+        "Solo me queda agradecerte por lo feliz que me haces, por los buenos momentos que creas en mi mente y por las sonrisas que me sacas inclusos en momentos adversos (a pesar que tú no lo sabes). Entenderás que esto es relativamente nuevo para mí y no le daba especial importancia a estas fechas pero llegaste tú a mi vida y desde ese entonces vivo cada día con la misma intensidad con el que el viento sopla en el inverno más gélido o como el mar golpeando las costas tras un fuerte oleaje porque es tan fuerte este amor que logro verte en cada hermoso atardecer de verano, en cada nube que decora el cielo. Afortunado me siento que seas mi 14 de febrero.",
         30
       )
     )
     .then(() =>
       typeWriter(
         paragraph2,
-        "Déjate llevar en el florecer por nuestro amor, un jardín que crece y se embellece con cada momento que compartimos.",
+        "Simplemente te amo y quiero que sepas que esto sólo crece y por más complicado que sea algún día, mi amor por ti no se desvanece. Ps: te haré creer que me quedé sin datos pero en realidad estoy escribiendo esto en el caro. Te amo mucho.",
         30
       )
     )
     .then(() => {
       setTimeout(() => {
         window.location.href = "flowers.html";
-      }, 3);
+      }, 3000); // Wait for 3 seconds before redirecting
     });
 });
