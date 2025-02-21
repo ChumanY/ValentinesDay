@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Update audio state in localStorage
     audio.addEventListener("play", function () {
       localStorage.setItem("audioPlaying", "true");
     });
